@@ -1,0 +1,61 @@
+defaults:
+  seed_value: 2021
+  nKfold: 10
+dir:
+  model_name: '003'
+  data_path: /content/Portable_Water/Portable_Water/data/
+  train_file: /content/Portable_Water/Portable_Water/data/Train.csv
+  test_file: /content/Portable_Water/Portable_Water/data/Test.csv
+  submit_file: /content/Portable_Water/Portable_Water/data/SampleSubmission.csv
+  model_path: /content/Portable_Water/Portable_Water/models/
+  checkpoints_path: /content/Portable_Water/Portable_Water/checkpoints/
+  predictions_path: /content/Portable_Water/Portable_Water/submissions/
+preps:
+  to_drop:
+  - region_area_
+  feature_cols:
+  - ph
+  - Hardness
+  - Solids
+  - Chloramines
+  - Sulfate
+  - Conductivity
+  - Organic_carbon
+  - Trihalomethanes
+  - Turbidity
+  category_cols:
+  - SW_range
+  - alkalinity_range
+  target_col:
+  - Potability
+model1:
+  learning_rate: 0.08
+  n_estimators: 96
+  cat_smooth: 10
+  metrics: binary_error
+  scale_pos_weight: 10.6
+  max_depth: 16
+  seed: 2021
+  num_leaves: 49
+  reg_lambda: 0.3
+model2:
+  learning_rate: 0.08
+  n_estimators: 96
+  cat_smooth: 10
+  metrics: binary_error
+  scale_pos_weight: 10.6
+  max_depth: 16
+  seed: 2021
+  num_leaves: 49
+  reg_lambda: 0.3
+  reg_alpha: 0.3
+model3:
+  learning_rate: 0.08
+  n_estimators: 96
+  cat_smooth: 10
+  metrics: binary_error
+  scale_pos_weight: 10.6
+  max_depth: 16
+  seed: 2021
+  num_leaves: 22
+  reg_lambda: 0.3
